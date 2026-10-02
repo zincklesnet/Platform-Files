@@ -1,0 +1,3 @@
+<?php
+namespace ZinCelestial\Platform\Ecosystem; defined('ABSPATH')||exit;
+final class EcosystemManager{public function __construct(private IntegrationRegistry $registry){}public function boot():void{$this->registry->register('buddyx',fn()=>wp_get_theme()->get_template()==='buddyx'||wp_get_theme()->get_stylesheet()==='zincelestial-buddyx');$this->registry->register('buddypress',fn()=>function_exists('buddypress'));$this->registry->register('woocommerce',fn()=>class_exists('WooCommerce'));$this->registry->register('bbpress',fn()=>class_exists('bbPress'));$this->registry->register('gamipress',fn()=>function_exists('gamipress'));}}

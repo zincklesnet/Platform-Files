@@ -1,0 +1,43 @@
+{
+  "scope": "static review of reconstructed uploaded Platform sources",
+  "php_files": 37,
+  "findings": [
+    {
+      "file": "src/Network/PolicyController.php",
+      "category": "superglobal",
+      "occurrences": 1
+    },
+    {
+      "file": "src/Network/PolicyController.php",
+      "category": "output",
+      "occurrences": 5
+    },
+    {
+      "file": "src/Fleet/FleetService.php",
+      "category": "superglobal",
+      "occurrences": 1
+    },
+    {
+      "file": "src/Database/AtomicLock.php",
+      "category": "sql",
+      "occurrences": 1
+    },
+    {
+      "file": "src/Admin/ControlCenter.php",
+      "category": "output",
+      "occurrences": 8
+    },
+    {
+      "file": "src/Admin/SecurityPage.php",
+      "category": "output",
+      "occurrences": 1
+    }
+  ],
+  "open_gates": [
+    "PHP syntax and WPCS in CI",
+    "live WordPress Multisite execution",
+    "MySQL/MariaDB lock concurrency",
+    "persistent object cache",
+    "Wordfence/AAM interoperability"
+  ]
+}

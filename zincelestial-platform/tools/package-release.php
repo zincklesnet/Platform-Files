@@ -1,0 +1,2 @@
+<?php
+$root=dirname(__DIR__);passthru(PHP_BINARY.' '.escapeshellarg(__DIR__.'/verify-build.php'),$c);if($c!==0)exit($c);$v=json_decode(file_get_contents($root.'/release/VERSION.json'),true)['version'];$out=dirname($root).'/zincelestial-platform-'.$v.'.zip';$z=new ZipArchive();$z->open($out,ZipArchive::CREATE|ZipArchive::OVERWRITE);foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root)) as $f)if($f->isFile())$z->addFile($f->getPathname(),'zincelestial-platform/'.substr($f->getPathname(),strlen($root)+1));$z->close();echo $out.PHP_EOL;

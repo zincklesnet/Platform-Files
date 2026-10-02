@@ -1,0 +1,2 @@
+<?php
+$r=dirname(__DIR__);$m=json_decode(file_get_contents($r.'/BUILD-MANIFEST.json'),true);$v=json_decode(file_get_contents($r.'/release/VERSION.json'),true);echo 'Version: '.$v['version'].PHP_EOL.'Files: '.$m['file_count'].PHP_EOL.'Declared types: '.$m['declared_types'].PHP_EOL;

@@ -1,0 +1,3 @@
+<?php
+namespace ZinCelestial\Platform\Security; defined('ABSPATH')||exit;
+final class CapabilityAudit{public function roles():array{if(!current_user_can('manage_options'))return array();$o=array();$s=array('manage_options','manage_network_options','edit_users','promote_users','unfiltered_html','install_plugins','update_plugins','delete_plugins');foreach(wp_roles()->roles as $k=>$r){$active=array_keys(array_filter((array)$r['capabilities']));$o[sanitize_key($k)]=array('name'=>sanitize_text_field($r['name']),'capability_count'=>count($active),'sensitive'=>array_values(array_intersect($active,$s)));}return $o;}}

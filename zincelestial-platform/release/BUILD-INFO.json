@@ -1,0 +1,12 @@
+{
+  "built_utc": "2026-10-01T17:59:16.343625+00:00",
+  "declared_types": 58,
+  "validation_tools": [
+    "verify-autoload.php",
+    "verify-dependencies.php",
+    "verify-manifest.php",
+    "verify-build.php",
+    "package-release.php",
+    "release-report.php"
+  ]
+}

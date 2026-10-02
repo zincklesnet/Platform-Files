@@ -1,0 +1,3 @@
+<?php
+$root=dirname(__DIR__);$src=$root.'/src';$bad=[];foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($src)) as $f){if(!$f->isFile()||$f->getExtension()!=='php')continue;$t=file_get_contents($f->getPathname());if(!preg_match('/namespace\s+([^;]+);/',$t,$n)||!preg_match('/(?:(?:final|abstract)\s+)?(class|interface|trait)\s+(\w+)/',$t,$c))continue;$prefix='ZinCelestial\\Platform\\';$fq=$n[1].'\\'.$c[2];if(strpos($fq,$prefix)!==0)continue;$expected=$src.'/'.str_replace('\\','/',substr($fq,strlen($prefix))).'.php';if(realpath($expected)!==realpath($f->getPathname()))$bad[]=$fq;}if($bad){fwrite(STDERR,implode(PHP_EOL,$bad));exit(1);}echo "Autoload: PASS
+";

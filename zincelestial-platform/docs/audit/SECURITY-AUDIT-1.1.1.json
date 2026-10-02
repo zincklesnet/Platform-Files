@@ -1,0 +1,157 @@
+{
+  "title": "Platform 1.1.1 Security Hardening Audit",
+  "date": "2026-10-01",
+  "scope": "Static review of uploaded/reconstructed source; no live WordPress execution.",
+  "files_reviewed": 56,
+  "remediations": [
+    "Replaced sitemeta/JSON lock with dedicated atomic lock table and token-owned release",
+    "Added capability guard to asset rule persistence",
+    "Hardened URL-rule matching with unslash, URL parsing, and empty-match rejection",
+    "Added cron cleanup deactivator",
+    "Retained capability and nonce gates in administrative controllers"
+  ],
+  "open_risks": [
+    "Run WordPress Coding Standards and static analysis in CI",
+    "Exercise every admin_post handler in authenticated/unauthenticated integration tests",
+    "Validate Wordfence and AAM behavior with supported versions",
+    "Review all dynamic output manually despite existing escaping",
+    "Confirm deactivation hook registration in plugin bootstrap"
+  ],
+  "signals": [
+    {
+      "file": "src/Network/AggregationController.php",
+      "category": "state-endpoint",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Network/PolicyController.php",
+      "category": "unsanitized-superglobal",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Network/PolicyController.php",
+      "category": "state-endpoint",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Network/PolicyController.php",
+      "category": "dynamic-output",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Jobs/NetworkAggregationJob.php",
+      "category": "switch-blog",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "file": "src/Jobs/NetworkAggregationJob.php",
+      "category": "restore-blog",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "file": "src/Fleet/FleetService.php",
+      "category": "unsanitized-superglobal",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Database/AtomicLock.php",
+      "category": "raw-sql",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Core/Activator.php",
+      "category": "switch-blog",
+      "lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "file": "src/Core/Activator.php",
+      "category": "restore-blog",
+      "lines": [
+        4,
+        5
+      ]
+    },
+    {
+      "file": "src/Admin/ControlCenter.php",
+      "category": "dynamic-output",
+      "lines": [
+        10,
+        12,
+        16,
+        17
+      ]
+    },
+    {
+      "file": "src/Admin/SecurityPage.php",
+      "category": "dynamic-output",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Admin/FleetPage.php",
+      "category": "dynamic-output",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Admin/AssetController.php",
+      "category": "unsanitized-superglobal",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Admin/AssetController.php",
+      "category": "state-endpoint",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "src/Assets/Rules/RuleEngine.php",
+      "category": "unsanitized-superglobal",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "file": "tests/multisite/PlatformMultisiteTest.php",
+      "category": "switch-blog",
+      "lines": [
+        2
+      ]
+    },
+    {
+      "file": "tests/multisite/PlatformMultisiteTest.php",
+      "category": "restore-blog",
+      "lines": [
+        2
+      ]
+    }
+  ],
+  "php_lint": {
+    "available": false,
+    "failures": []
+  }
+}
