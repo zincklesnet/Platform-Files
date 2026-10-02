@@ -1,0 +1,2 @@
+<?php
+use PHPUnit\Framework\TestCase;use ZinCelestial\Platform\Workflow\Durable\RetryPolicy;final class DurableInfrastructureTest extends TestCase{public function test_retry_is_bounded_and_backed_off():void{$p=new RetryPolicy(3,10,100);$this->assertTrue($p->can_retry(2));$this->assertFalse($p->can_retry(3));$this->assertGreaterThanOrEqual(20,$p->delay(2));$this->assertLessThanOrEqual(120,$p->delay(9));}}

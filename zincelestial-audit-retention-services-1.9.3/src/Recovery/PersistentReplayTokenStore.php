@@ -1,0 +1,3 @@
+<?php
+namespace ZinCelestial\Platform\Recovery;use RuntimeException;defined('ABSPATH')||exit;
+final class PersistentReplayTokenStore{public function __construct(private \wpdb $db,private string $table,private int $site_id){}public function consume(string $jti,int $expires_at):void{$hash=hash('sha256',$jti);$ok=$this->db->query($this->db->prepare("INSERT IGNORE INTO {$this->table} (site_id,jti_hash,expires_at,consumed_at) VALUES (%d,%s,FROM_UNIXTIME(%d),UTC_TIMESTAMP(6))",$this->site_id,$hash,$expires_at));if($ok!==1)throw new RuntimeException('Replay token already consumed.');}public function purge():int{return(int)$this->db->query($this->db->prepare("DELETE FROM {$this->table} WHERE site_id=%d AND expires_at<UTC_TIMESTAMP()",$this->site_id));}}

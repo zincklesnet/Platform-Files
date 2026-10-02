@@ -1,0 +1,3 @@
+<?php
+use PHPUnit\Framework\TestCase;use ZinCelestial\Platform\Audit\{AuditRetentionPolicy,AuditRetentionService};
+final class AuditRetentionIntegrationTest extends TestCase{public function test_purge_requires_verified_export():void{global $wpdb;$svc=new AuditRetentionService($wpdb,$wpdb->base_prefix.'zcp_audit_log',$wpdb->base_prefix.'zcp_audit_exports',1);$this->expectException(RuntimeException::class);$svc->purge(new AuditRetentionPolicy(30,0,true),time(),'approval_1234');}public function test_legal_hold_rows_are_excluded_by_query_contract():void{$src=file_get_contents(dirname(__DIR__,2).'/src/Audit/AuditRetentionService.php');$this->assertStringContainsString('legal_hold=0',$src);$this->assertStringContainsString('site_id=%d',$src);}}

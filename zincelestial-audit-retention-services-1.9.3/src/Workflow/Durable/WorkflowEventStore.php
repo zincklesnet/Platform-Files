@@ -1,0 +1,3 @@
+<?php
+namespace ZinCelestial\Platform\Workflow\Durable;use RuntimeException;defined('ABSPATH')||exit;
+final class WorkflowEventStore {public function __construct(private \wpdb $db,private string $table){}public function append(string $run_id,string $event,array $metadata=[]):void{$safe=array_intersect_key($metadata,['step'=>1,'attempt'=>1,'code'=>1]);$ok=$this->db->insert($this->table,['event_id'=>wp_generate_uuid4(),'run_id'=>sanitize_key($run_id),'site_id'=>get_current_blog_id(),'event'=>sanitize_key($event),'metadata'=>wp_json_encode($safe),'created_at'=>current_time('mysql',true)]);if(!$ok)throw new RuntimeException('Workflow event append failed.');}}

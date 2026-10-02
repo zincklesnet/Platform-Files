@@ -1,0 +1,3 @@
+<?php
+use PHPUnit\Framework\TestCase;use ZinCelestial\Platform\OperationsCenter\OperationsCenterService;
+final class OperationsCenterIntegrationTest extends TestCase {public function test_summary_is_tenant_scoped_and_counts_attention():void{$db=new class extends wpdb{public string $q='';public function __construct(){}public function prepare($q,...$a){$this->q=$q;return$q;}public function get_results($q,$o=OBJECT){return[['status'=>'failed','total'=>'2'],['status'=>'pending_approval','total'=>'3']];}};$s=new OperationsCenterService($db,'wp_zcp_workflow_runs',7);$x=$s->summary();$this->assertSame(5,$x['attention']);$this->assertStringContainsString('site_id=%d',$db->q);}}

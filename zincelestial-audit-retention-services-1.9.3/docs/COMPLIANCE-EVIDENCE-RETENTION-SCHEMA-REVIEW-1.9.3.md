@@ -1,0 +1,5 @@
+# Compliance evidence and retention schema security review
+
+Hardened: evidence uniqueness by tenant/source/digest; explicit expiry and supersession; export coverage by sequence rather than timestamp alone; object-key uniqueness; verified timestamp; legal holds normalized into a dedicated table; requester/approver separation; transactional hold application.
+
+Critical findings and gates: do not use `ALTER TABLE` through dbDelta; deploy full desired table definitions and tested migrations. Boolean `audit_log.legal_hold` is only a cache—legal-hold rows are authoritative. Release must recompute all overlapping active holds before clearing cache. WORM adapters must verify provider object-lock retention and version ID, not trust a client response. Export registry writes and object upload cannot be one database transaction; use pending/final states and reconciliation. Encrypt evidence source identifiers or tokenize them if identifying. Apply least-privilege DB roles, immutable purge receipts, jurisdiction-specific policy, restore drills, and live concurrent hold/purge tests.

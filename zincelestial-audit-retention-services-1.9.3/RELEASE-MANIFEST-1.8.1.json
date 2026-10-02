@@ -1,0 +1,80 @@
+{
+  "version": "1.8.1",
+  "release": "Durable Workflow Infrastructure",
+  "files": [
+    {
+      "file": "docs/DURABLE-WORKFLOWS-1.8.1.md",
+      "bytes": 494,
+      "sha256": "8ee89153c4c54eee6e524d5f90ae078f4c4a8c7342dc20fedbe11b99dc4c9dd8"
+    },
+    {
+      "file": "docs/V1.8.0-REVIEW-HARDENING.md",
+      "bytes": 533,
+      "sha256": "908f701554edb44113fe451a8364f00cb64e68ea2dc16efdd02183e472c3fe7c"
+    },
+    {
+      "file": "src/Workflow/Contracts/WorkflowRepositoryInterface.php",
+      "bytes": 500,
+      "sha256": "4e955b09ec14768f4fb353c155289c619612dd656cd7afe326153508c1480b6a"
+    },
+    {
+      "file": "src/Workflow/Durable/RetryPolicy.php",
+      "bytes": 468,
+      "sha256": "db993085cef6edcafd23da48358aec48a834f9c91dfebaa2b7769a116f9913f2"
+    },
+    {
+      "file": "src/Workflow/Durable/Schema.php",
+      "bytes": 668,
+      "sha256": "6125f0a091952684d5a3650267eda728b0773cef5f83df6d07ad8954574b2562"
+    },
+    {
+      "file": "src/Workflow/Durable/WorkflowEventStore.php",
+      "bytes": 664,
+      "sha256": "8116bb6e6a483cf52a188097302a07e9007bcf7a2bf54375a75bcd9a3ba1020f"
+    },
+    {
+      "file": "src/Workflow/Durable/WorkflowRunRepository.php",
+      "bytes": 2683,
+      "sha256": "d1c596f4790f6c586efa750ea89f9ec35966c725b580d5360749f7e4c9b99dcb"
+    },
+    {
+      "file": "src/Workflow/WorkflowEngine.php",
+      "bytes": 1167,
+      "sha256": "11d64e95be704e6c9827d374fe012a6594e34ffca7722d452f51eed58233a6c1"
+    },
+    {
+      "file": "src/Workflow/WorkflowRun.php",
+      "bytes": 3171,
+      "sha256": "7eb208faa8eb649a2e3ba669f8ee343e23835f6a329d36f6ee514ae9cd160a87"
+    },
+    {
+      "file": "tests/Workflow/DurableInfrastructureTest.php",
+      "bytes": 408,
+      "sha256": "ce4ac689cfba7d29c12c66c092645c6dfff875c048555065a4bb5c9e6660a2c6"
+    },
+    {
+      "file": "tests/Workflow/WorkflowIntegrationRecoveryTest.php",
+      "bytes": 2687,
+      "sha256": "f034aca4acb52e9affddd3907ae7ae30b3d6043ffbe3b5619b0991db9a25cf07"
+    }
+  ],
+  "static_checks": {
+    "durable_repository": true,
+    "schema": true,
+    "recovery_tests": true,
+    "retry_tests": true,
+    "review": true
+  },
+  "verification": {
+    "zip_integrity": "pass",
+    "php_lint": "not_run_php_unavailable",
+    "phpunit": "provided_not_run_phpunit_unavailable",
+    "wordpress_database_tests": "not_run_no_disposable_environment"
+  },
+  "production_caveats": [
+    "Run schema migration and rollback tests",
+    "Use transactional database semantics supported by hosting",
+    "Validate capabilities/nonces at ingress and authorization again in handlers",
+    "Exercise crash recovery and compensation on staging"
+  ]
+}

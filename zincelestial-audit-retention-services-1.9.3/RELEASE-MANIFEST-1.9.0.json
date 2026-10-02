@@ -1,0 +1,219 @@
+{
+  "version": "1.9.0",
+  "release": "Ecosystem Governance",
+  "files": [
+    {
+      "file": "RELEASE-MANIFEST-1.8.1.json",
+      "bytes": 2646,
+      "sha256": "08f827835d682e0c3fee1221eba65b36a1b7f5440eb42e0d5dd5950f028dea83"
+    },
+    {
+      "file": "RELEASE-MANIFEST-1.8.2.json",
+      "bytes": 4015,
+      "sha256": "52f8defb505a47c30a46cced221e270a9ff39033659fe77123b8329c01dcc9dc"
+    },
+    {
+      "file": "RELEASE-MANIFEST-1.8.3.json",
+      "bytes": 5605,
+      "sha256": "81841419a1a1fe78b993dd385caaf7b6ede1d4fbadb0591948055fcd585d73da"
+    },
+    {
+      "file": "assets/operations-center.css",
+      "bytes": 435,
+      "sha256": "86c0380c7087987b806fc1a05d50472734d2314fcb3a43d535665ad04a88c639"
+    },
+    {
+      "file": "assets/operations-center.js",
+      "bytes": 277,
+      "sha256": "2a090c5f5246fe8b187b7eec25d9e01cfe137d8ab7b92da1cfc86cd1b1450243"
+    },
+    {
+      "file": "docs/DURABLE-WORKFLOWS-1.8.1.md",
+      "bytes": 494,
+      "sha256": "8ee89153c4c54eee6e524d5f90ae078f4c4a8c7342dc20fedbe11b99dc4c9dd8"
+    },
+    {
+      "file": "docs/ECOSYSTEM-GOVERNANCE-1.9.0.md",
+      "bytes": 462,
+      "sha256": "74ee58f1e4d3c629d17a6afa99b841b3c2b7a009a0e3344fc3150b235a8680fa"
+    },
+    {
+      "file": "docs/OPERATIONS-CENTER-1.8.2.md",
+      "bytes": 389,
+      "sha256": "8c2493c5b1d33dfec9cd6dd5eecfbf2b400f4f0a757f75b377fdfd5860df1bc6"
+    },
+    {
+      "file": "docs/RECOVERY-OPERATIONS-1.8.3.md",
+      "bytes": 695,
+      "sha256": "51b615c20b01ccd13d3773f2006dd0497c46a5178e79eb9ba6ab741f8dd43e10"
+    },
+    {
+      "file": "docs/RECOVERY-SECURITY-REVIEW-1.9.0.md",
+      "bytes": 408,
+      "sha256": "3599e8ac1175c4ff92f6999bd591155eb05dd76d87cd6b676596012d13f6e0de"
+    },
+    {
+      "file": "docs/V1.8.0-REVIEW-HARDENING.md",
+      "bytes": 533,
+      "sha256": "908f701554edb44113fe451a8364f00cb64e68ea2dc16efdd02183e472c3fe7c"
+    },
+    {
+      "file": "docs/V1.8.1-DATABASE-LEASE-REVIEW.md",
+      "bytes": 914,
+      "sha256": "c9e7668f0ef617f8671f3d1e72af19ccdc89744c181cc3fd1757ace00fc06bdb"
+    },
+    {
+      "file": "docs/V1.8.3-SECURITY-REVIEW.md",
+      "bytes": 467,
+      "sha256": "77efd36bc8f19cc454abcf506a7e882a05e21e5b0e948d0302ab18ac049ddda0"
+    },
+    {
+      "file": "src/Audit/ImmutableAuditLog.php",
+      "bytes": 1328,
+      "sha256": "b78fb8f32ac41f8bbc337c1eda408821b7085005e9d6b4bdcd344b400542efa7"
+    },
+    {
+      "file": "src/Governance/GovernanceEngine.php",
+      "bytes": 536,
+      "sha256": "973bae6b132dd84de2967b36ea317fda896926415358f02ea3074870cd803b65"
+    },
+    {
+      "file": "src/Governance/GovernancePolicy.php",
+      "bytes": 947,
+      "sha256": "b9661e6e8eee8a7f44736cc7cf74bdb76336079a07c5fe272b85970ca5bb899d"
+    },
+    {
+      "file": "src/Governance/Schema.php",
+      "bytes": 941,
+      "sha256": "093080fbee6675b5a976330d66e6d09e9c89a486b0e6eab665ad12cbbadac289"
+    },
+    {
+      "file": "src/OperationsCenter/OperationsCenterController.php",
+      "bytes": 595,
+      "sha256": "5eb3d0a55f8a0e23afbbe685f2c5ee580f7ae6d4a977a766d3aff1856c034d9f"
+    },
+    {
+      "file": "src/OperationsCenter/OperationsCenterService.php",
+      "bytes": 961,
+      "sha256": "75c57044fdd967e31c703e2b8ed48f7911038e9175d3dce7cf2bbd12654b7290"
+    },
+    {
+      "file": "src/Recovery/PersistentReplayTokenStore.php",
+      "bytes": 756,
+      "sha256": "9c823bfaaf1957a44c6950b3c6180edac3e27474d30bd587663623f420da8fc4"
+    },
+    {
+      "file": "src/Recovery/RecoveryAuthorization.php",
+      "bytes": 487,
+      "sha256": "1caa50b2651bf7312af7816f4429123fa1de26444bf3444fe38d20a63fd99515"
+    },
+    {
+      "file": "src/Recovery/RecoveryController.php",
+      "bytes": 704,
+      "sha256": "513ba399bca31564274681afb6dbab655a88002d20d44839a8fa479df35a06cb"
+    },
+    {
+      "file": "src/Recovery/RecoveryManager.php",
+      "bytes": 1131,
+      "sha256": "8f047b905e5f4f440cf030118e23b6e72651b6260a86822eb7b102543e823806"
+    },
+    {
+      "file": "src/Recovery/ReplayGuard.php",
+      "bytes": 583,
+      "sha256": "33266c80e43a9a85f3169faad9df3bcbe339fad7e8feca04f25e3a250bbaf2f1"
+    },
+    {
+      "file": "src/Recovery/ReplayToken.php",
+      "bytes": 875,
+      "sha256": "3f56452429ed5dd1cea3c1d8632e6483ec65571246eadbed9ad05da6e7cb9af0"
+    },
+    {
+      "file": "src/Workflow/Contracts/WorkflowRepositoryInterface.php",
+      "bytes": 500,
+      "sha256": "4e955b09ec14768f4fb353c155289c619612dd656cd7afe326153508c1480b6a"
+    },
+    {
+      "file": "src/Workflow/Durable/RetryPolicy.php",
+      "bytes": 468,
+      "sha256": "db993085cef6edcafd23da48358aec48a834f9c91dfebaa2b7769a116f9913f2"
+    },
+    {
+      "file": "src/Workflow/Durable/Schema.php",
+      "bytes": 1165,
+      "sha256": "cb4eb32d6bda998f667f99de7de69443546b604a4bc05fd213af40228e262bc6"
+    },
+    {
+      "file": "src/Workflow/Durable/WorkflowEventStore.php",
+      "bytes": 664,
+      "sha256": "8116bb6e6a483cf52a188097302a07e9007bcf7a2bf54375a75bcd9a3ba1020f"
+    },
+    {
+      "file": "src/Workflow/Durable/WorkflowRunRepository.php",
+      "bytes": 2888,
+      "sha256": "6e4993510bbd913ae9af141cfd38f3e52ddb5d0aba943fb65823137ff9b8d67e"
+    },
+    {
+      "file": "src/Workflow/WorkflowEngine.php",
+      "bytes": 1167,
+      "sha256": "11d64e95be704e6c9827d374fe012a6594e34ffca7722d452f51eed58233a6c1"
+    },
+    {
+      "file": "src/Workflow/WorkflowRun.php",
+      "bytes": 3171,
+      "sha256": "7eb208faa8eb649a2e3ba669f8ee343e23835f6a329d36f6ee514ae9cd160a87"
+    },
+    {
+      "file": "tests/Governance/GovernanceEngineTest.php",
+      "bytes": 549,
+      "sha256": "d957843e51623c3b4fbdcadf70197934745807c82e9f82a6d92c33597c92eea6"
+    },
+    {
+      "file": "tests/OperationsCenter/OperationsCenterApiE2ETest.php",
+      "bytes": 1041,
+      "sha256": "c7db2462fe95f566a1334bb48d2e9d52d25d84f56ab096db532e46b64482ff03"
+    },
+    {
+      "file": "tests/OperationsCenter/OperationsCenterIntegrationTest.php",
+      "bytes": 679,
+      "sha256": "5430405418a36d438d4e198736968c807eac082d2fe6b7365fa5da1e70bd22ac"
+    },
+    {
+      "file": "tests/Recovery/RecoveryFailureCompensationTest.php",
+      "bytes": 1262,
+      "sha256": "3e106de5fcf3ec3c0d579135e5488c94f69ff8a6f2a4f68e6afe8116952ef5fa"
+    },
+    {
+      "file": "tests/Recovery/ReplaySecurityTest.php",
+      "bytes": 462,
+      "sha256": "69101ddafbc2d7d8ce58aa0470fe58884f4d91d2b4bb338e762a85964c97d6f9"
+    },
+    {
+      "file": "tests/Workflow/DurableInfrastructureTest.php",
+      "bytes": 408,
+      "sha256": "ce4ac689cfba7d29c12c66c092645c6dfff875c048555065a4bb5c9e6660a2c6"
+    },
+    {
+      "file": "tests/Workflow/PersistenceMultisiteIntegrationTest.php",
+      "bytes": 1001,
+      "sha256": "272abf176d936d670da31c7d3358233eb65a2c6e7ea3c59221ec753158216aed"
+    },
+    {
+      "file": "tests/Workflow/WorkflowIntegrationRecoveryTest.php",
+      "bytes": 2687,
+      "sha256": "f034aca4acb52e9affddd3907ae7ae30b3d6043ffbe3b5619b0991db9a25cf07"
+    }
+  ],
+  "verification": {
+    "zip_integrity": "pass",
+    "static_presence": "pass",
+    "php_lint": "not_run_php_unavailable",
+    "phpunit": "provided_not_run_phpunit_unavailable",
+    "wordpress_db_e2e": "not_run_no_disposable_environment"
+  },
+  "production_gates": [
+    "transactionally couple JTI consumption and replay creation",
+    "append-only/WORM audit export",
+    "key versioning and rotation",
+    "multisite isolation and recovery failure staging tests"
+  ]
+}

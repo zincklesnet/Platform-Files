@@ -1,0 +1,3 @@
+<?php
+namespace ZinCelestial\Platform\Recovery;defined('ABSPATH')||exit;
+final class RecoveryController {public function __construct(private RecoveryManager $manager){}public function register():void{register_rest_route('zincelestial/v1','/operations-center/recovery',['methods'=>'POST','callback'=>[$this,'recover'],'permission_callback'=>fn()=>current_user_can('manage_options')]);}public function recover(\WP_REST_Request $r):\WP_REST_Response{$this->manager->recover(sanitize_key($r['run_id']),(int)$r['site_id'],get_current_user_id(),sanitize_key($r['operation']),sanitize_text_field($r['nonce']),(array)$r['replay_token'],(int)$r['version']);return new \WP_REST_Response(['accepted'=>true],202);}}

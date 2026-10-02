@@ -1,0 +1,3 @@
+<?php
+namespace ZinCelestial\Platform\GovernanceDashboard;defined('ABSPATH')||exit;
+final class GovernanceDashboardController{public function __construct(private GovernanceDashboardService $service){}public function register():void{register_rest_route('zincelestial/v1','/governance-dashboard',['methods'=>'GET','callback'=>[$this,'index'],'permission_callback'=>fn()=>current_user_can(is_multisite()?'manage_network_options':'manage_options'),'args'=>['limit'=>['sanitize_callback'=>'absint','validate_callback'=>fn($v)=>$v>=1&&$v<=100]]]);}public function index(\WP_REST_Request $r):\WP_REST_Response{return new \WP_REST_Response(['summary'=>$this->service->summary(),'timeline'=>$this->service->timeline((int)($r['limit']?:50))],200);}}

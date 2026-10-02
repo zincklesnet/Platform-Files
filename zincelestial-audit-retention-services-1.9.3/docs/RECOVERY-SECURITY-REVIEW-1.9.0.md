@@ -1,0 +1,2 @@
+# Recovery security review
+Recovery must revalidate policy, tenant, workflow version, approval expiry, capability, nonce, and replay token at execution time. Token consumption and replay-run creation should occur in one transaction. Compensation handlers remain allowlisted, idempotent, bounded, and independently authorized. A compensation failure must create an incident and never erase original evidence.

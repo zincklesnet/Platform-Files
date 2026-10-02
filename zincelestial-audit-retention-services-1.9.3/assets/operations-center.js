@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('[data-zcp-filter]').forEach(b=>b.addEventListener('click',()=>{const s=b.dataset.zcpFilter;document.querySelectorAll('[data-zcp-status]').forEach(r=>r.hidden=s!=='all'&&r.dataset.zcpStatus!==s)}))});

@@ -1,0 +1,2 @@
+# Ecosystem Governance 1.9.0
+Adds policy evaluation, distinct approver counting, separation of duties, atomic persistent replay-token consumption, tenant scoping, and hash-chained audit logs. Replay JTIs are stored only as SHA-256 hashes. Audit payloads use an allowlist and exclude secrets. Production requires append-only DB permissions or external WORM export, key rotation/versioning, retention policies, rate limits, and real multisite/REST/database tests.

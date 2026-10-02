@@ -1,0 +1,121 @@
+{
+  "version": "1.8.2",
+  "release": "Operations Center",
+  "files": [
+    {
+      "file": "RELEASE-MANIFEST-1.8.1.json",
+      "bytes": 2646,
+      "sha256": "08f827835d682e0c3fee1221eba65b36a1b7f5440eb42e0d5dd5950f028dea83"
+    },
+    {
+      "file": "assets/operations-center.css",
+      "bytes": 435,
+      "sha256": "86c0380c7087987b806fc1a05d50472734d2314fcb3a43d535665ad04a88c639"
+    },
+    {
+      "file": "assets/operations-center.js",
+      "bytes": 277,
+      "sha256": "2a090c5f5246fe8b187b7eec25d9e01cfe137d8ab7b92da1cfc86cd1b1450243"
+    },
+    {
+      "file": "docs/DURABLE-WORKFLOWS-1.8.1.md",
+      "bytes": 494,
+      "sha256": "8ee89153c4c54eee6e524d5f90ae078f4c4a8c7342dc20fedbe11b99dc4c9dd8"
+    },
+    {
+      "file": "docs/OPERATIONS-CENTER-1.8.2.md",
+      "bytes": 389,
+      "sha256": "8c2493c5b1d33dfec9cd6dd5eecfbf2b400f4f0a757f75b377fdfd5860df1bc6"
+    },
+    {
+      "file": "docs/V1.8.0-REVIEW-HARDENING.md",
+      "bytes": 533,
+      "sha256": "908f701554edb44113fe451a8364f00cb64e68ea2dc16efdd02183e472c3fe7c"
+    },
+    {
+      "file": "docs/V1.8.1-DATABASE-LEASE-REVIEW.md",
+      "bytes": 914,
+      "sha256": "c9e7668f0ef617f8671f3d1e72af19ccdc89744c181cc3fd1757ace00fc06bdb"
+    },
+    {
+      "file": "src/OperationsCenter/OperationsCenterController.php",
+      "bytes": 595,
+      "sha256": "5eb3d0a55f8a0e23afbbe685f2c5ee580f7ae6d4a977a766d3aff1856c034d9f"
+    },
+    {
+      "file": "src/OperationsCenter/OperationsCenterService.php",
+      "bytes": 961,
+      "sha256": "75c57044fdd967e31c703e2b8ed48f7911038e9175d3dce7cf2bbd12654b7290"
+    },
+    {
+      "file": "src/Workflow/Contracts/WorkflowRepositoryInterface.php",
+      "bytes": 500,
+      "sha256": "4e955b09ec14768f4fb353c155289c619612dd656cd7afe326153508c1480b6a"
+    },
+    {
+      "file": "src/Workflow/Durable/RetryPolicy.php",
+      "bytes": 468,
+      "sha256": "db993085cef6edcafd23da48358aec48a834f9c91dfebaa2b7769a116f9913f2"
+    },
+    {
+      "file": "src/Workflow/Durable/Schema.php",
+      "bytes": 1165,
+      "sha256": "cb4eb32d6bda998f667f99de7de69443546b604a4bc05fd213af40228e262bc6"
+    },
+    {
+      "file": "src/Workflow/Durable/WorkflowEventStore.php",
+      "bytes": 664,
+      "sha256": "8116bb6e6a483cf52a188097302a07e9007bcf7a2bf54375a75bcd9a3ba1020f"
+    },
+    {
+      "file": "src/Workflow/Durable/WorkflowRunRepository.php",
+      "bytes": 2888,
+      "sha256": "6e4993510bbd913ae9af141cfd38f3e52ddb5d0aba943fb65823137ff9b8d67e"
+    },
+    {
+      "file": "src/Workflow/WorkflowEngine.php",
+      "bytes": 1167,
+      "sha256": "11d64e95be704e6c9827d374fe012a6594e34ffca7722d452f51eed58233a6c1"
+    },
+    {
+      "file": "src/Workflow/WorkflowRun.php",
+      "bytes": 3171,
+      "sha256": "7eb208faa8eb649a2e3ba669f8ee343e23835f6a329d36f6ee514ae9cd160a87"
+    },
+    {
+      "file": "tests/OperationsCenter/OperationsCenterIntegrationTest.php",
+      "bytes": 679,
+      "sha256": "5430405418a36d438d4e198736968c807eac082d2fe6b7365fa5da1e70bd22ac"
+    },
+    {
+      "file": "tests/Workflow/DurableInfrastructureTest.php",
+      "bytes": 408,
+      "sha256": "ce4ac689cfba7d29c12c66c092645c6dfff875c048555065a4bb5c9e6660a2c6"
+    },
+    {
+      "file": "tests/Workflow/PersistenceMultisiteIntegrationTest.php",
+      "bytes": 1001,
+      "sha256": "272abf176d936d670da31c7d3358233eb65a2c6e7ea3c59221ec753158216aed"
+    },
+    {
+      "file": "tests/Workflow/WorkflowIntegrationRecoveryTest.php",
+      "bytes": 2687,
+      "sha256": "f034aca4acb52e9affddd3907ae7ae30b3d6043ffbe3b5619b0991db9a25cf07"
+    }
+  ],
+  "verification": {
+    "zip_integrity": "pass",
+    "static_presence": "pass",
+    "php_lint": "not_run_php_unavailable",
+    "phpunit": "provided_not_run_phpunit_unavailable",
+    "live_multisite_db": "not_run_no_disposable_wordpress_multisite"
+  },
+  "review_fixes": [
+    "composite tenant primary key",
+    "lease fencing token",
+    "expired-heartbeat rejection",
+    "injected tenant scope",
+    "event table migration",
+    "microsecond lease timestamps"
+  ]
+}

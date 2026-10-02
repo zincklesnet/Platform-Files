@@ -1,0 +1,2 @@
+<?php
+use PHPUnit\Framework\TestCase;use ZinCelestial\Platform\Governance\{GovernanceEngine,GovernancePolicy};final class GovernanceEngineTest extends TestCase{public function test_separation_of_duties_and_distinct_approvers():void{$e=new GovernanceEngine();$e->register(new GovernancePolicy('replay','replay',['administrator'],2,true));$this->expectException(RuntimeException::class);$e->authorize('replay','replay',[['operation'=>'replay','actor'=>1,'roles'=>['administrator']],['operation'=>'replay','actor'=>1,'roles'=>['administrator']]],1);}}
